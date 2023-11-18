@@ -1,15 +1,17 @@
 import type { FunctionComponent, FC } from "react"
 
 
-const random = (): number => Math.floor(Math.random()*123)+1
+type Props = {
+  imagen:string
+}
 
 // Forma explícita "JSX.Element"
-export const ImageFox = (): JSX.Element => {
+export const ImageFox = ({imagen}:Props): JSX.Element => {
 
-    const URL:string = `https://randomfox.ca/images/${random()}.jpg`
+  
 	return (
 		<div>
-			<img src={URL} width={450} className="rounded-md"/>
+			<img src={imagen} width={450} className="rounded-md"/>
 		</div>
 	)
 }
